@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class DesastreBio {
 	private String lugar;
 	private int año;
-	private int impactoEconomico;
+	private long impactoEconomico;
 	private int cantidadPersonasAfect;
 	public ArrayList<Persona> personasDesaparecidas = new ArrayList<>();
 
@@ -22,7 +22,6 @@ public class DesastreBio {
 
 	public void listaDesaparecidos() {
 		System.out.println(personasDesaparecidas);
-		;
 	}
 
 	public void detalleDesastre() {

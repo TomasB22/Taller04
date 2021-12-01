@@ -1,5 +1,9 @@
 package main;
 
+import gui.VentanaLista;
+import model.DesastreBio;
+import model.Persona;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,28 +21,31 @@ public class main {
         System.out.println ("1. Mostrar datos del desastre biologico.");
         System.out.println ("2. Mostrar lista de personas desaparecidas.");
         System.out.println ("3. Mostrar lista de personas desaparecidas mediante JFrame");
-        System.out.println ("3. Agregar persona a lista de desaparecidas.");
-        System.out.println ("4. Salir.");
+        System.out.println ("4. Agregar persona a lista de desaparecidas.");
+        System.out.println ("5. Salir.");
         System.out.println ("------------------------------------------");
     }
     public static void switchesMenu() {
+        DesastreBio d1 = new DesastreBio("Chile",2020,987451651,38346);
+        ArrayList<Persona> listPersonas = new ArrayList<>();
+
         int opcionSwitch = -1;
         do {
             opcionSwitch = validarMenu(5);
             switch (opcionSwitch) {
                 case 1 :
+                    d1.detalleDesastre();
                     mostrarMenu();
-
                 case 2 :
-
-
-                case 3 :
+                    d1.listaDesaparecidos();
                     mostrarMenu();
+                case 3 :
+                    VentanaLista ventanaLista =  new VentanaLista(d1);
                 case 4 :
-                    finalizarPrograma();
 
+                    mostrarMenu();
                 case 5 :
-
+                    finalizarPrograma();
             }
         } while (opcionSwitch<5);
     }
