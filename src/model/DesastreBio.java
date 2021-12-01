@@ -22,7 +22,7 @@ public class DesastreBio {
 	}
 
 	public void listaDesaparecidos() {
-		System.out.println(personasDesaparecidas);
+		System.out.println(personasDesaparecidas.toString());
 	}
 
 	public void detalleDesastre() {
