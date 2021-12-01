@@ -20,8 +20,6 @@ public class VentanaLista extends JFrame {
 		setSize (700,300);
 		setDefaultCloseOperation (EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-
-
 	}
 
 	private void initVentanaAgregar() {
@@ -31,7 +29,7 @@ public class VentanaLista extends JFrame {
 			datos[0][i]=desastreBio.personasDesaparecidas.get(0).getNombre();
 			datos[1][i]= String.valueOf(desastreBio.personasDesaparecidas.get(1).getEdad());
 			datos[2][i]=desastreBio.personasDesaparecidas.get(2).getSexo();
-			datos[3][i]=desastreBio.personasDesaparecidas.get(3).getEstado();
+			datos[3][i]=desastreBio.personasDesaparecidas.get(3).getEstado(); //dio error en esta linea, nose porque
 		}
 
 		JTable tabla = new JTable(datos,categorias);

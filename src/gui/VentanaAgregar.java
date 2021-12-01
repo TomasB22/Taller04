@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaAgregar extends JFrame {
-	private DesastreBio desastreBio = new DesastreBio();
+	private DesastreBio desastreBio;
 	private VentanaLista ventanaLista;
 	private JPanel panel2 = new JPanel();
 	private JLabel nombreLabel =  new JLabel("Nombre: ");
@@ -22,11 +22,12 @@ public class VentanaAgregar extends JFrame {
 	private JButton botonAdd = new JButton("Añadir");
 	private JLabel error = new JLabel("Error");
 
-	public VentanaAgregar(){
+	public VentanaAgregar(DesastreBio desastreBio){
 		super("Agregar Persona Afectada");
 		initVentanaAgregar();
+		this.desastreBio = desastreBio;
 		setSize (700,300);
-		setDefaultCloseOperation (EXIT_ON_CLOSE);
+
 		setLocationRelativeTo(null);
 	}
 

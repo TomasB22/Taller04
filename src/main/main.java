@@ -1,5 +1,6 @@
 package main;
 
+import gui.VentanaAgregar;
 import gui.VentanaLista;
 import model.DesastreBio;
 import model.Persona;
@@ -21,12 +22,12 @@ public class main {
         System.out.println ("------------------------------------------");
         System.out.println ("1. Mostrar datos del desastre biologico.");
         System.out.println ("2. Mostrar lista de personas desaparecidas.");
-        System.out.println ("3. Mostrar lista de personas desaparecidas mediante JFrame");
+        System.out.println ("3. Agregar persona a lista de desaparecidas mediante JFrame");
         System.out.println ("4. Agregar persona a lista de desaparecidas.");
         System.out.println ("5. Salir.");
         System.out.println ("------------------------------------------");
     }
-    public static void switchesMenu() {
+    private static void switchesMenu() {
         DesastreBio d1 = new DesastreBio("Chile",2020,987451651,38346,agregarPersonasDefault());
         int opcionSwitch = -1;
         do {
@@ -35,15 +36,22 @@ public class main {
                 case 1 :
                     d1.detalleDesastre();
                     mostrarMenu();
+                    break;
                 case 2 :
                     d1.listaDesaparecidos();
                     mostrarMenu();
+                    break;
                 case 3 :
-                    VentanaLista ventanaLista =  new VentanaLista(d1);
-                    ventanaLista.setVisible(true);
+                    VentanaAgregar ventanaAgregar = new VentanaAgregar(d1);
+                    ventanaAgregar.setVisible(true);
+                    mostrarMenu();
+                    break;
+                    //VentanaLista ventanaLista =  new VentanaLista(d1);
+                    //ventanaLista.setVisible(true);
                 case 4 :
                     d1.actualizarListaDesaparecidos();
                     mostrarMenu();
+                    break;
                 case 5 :
                     finalizarPrograma();
             }
@@ -62,7 +70,7 @@ public class main {
         System.out.println ("Programa finalizado.");
     }
 
-    public static int validarMenu ( int x){
+    private static int validarMenu ( int x){
         int n = -1;
         do {
             //Scanner ponerlo dentro del DO, y dentro de una funcion
