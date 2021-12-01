@@ -8,13 +8,14 @@ public class DesastreBio {
 	private int año;
 	private long impactoEconomico;
 	private int cantidadPersonasAfect;
-	public ArrayList<Persona> personasDesaparecidas = new ArrayList<>();
+	public ArrayList<Persona> personasDesaparecidas;
 
-	public DesastreBio(String lugar, int año, int impactoEconomico, int cantidadPersonasAfect) {
+	public DesastreBio(String lugar, int año, int impactoEconomico, int cantidadPersonasAfect, ArrayList<Persona> personasDesaparecidas) {
 		this.lugar = lugar;
 		this.año = año;
 		this.impactoEconomico = impactoEconomico;
 		this.cantidadPersonasAfect = cantidadPersonasAfect;
+		this.personasDesaparecidas = personasDesaparecidas;
 	}
 
 	public DesastreBio() {

@@ -4,6 +4,7 @@ import model.DesastreBio;
 
 import javax.swing.*;
 import javax.swing.table.TableModel;
+import java.awt.*;
 
 public class VentanaLista extends JFrame {
 	private JTable tabla;
@@ -14,6 +15,7 @@ public class VentanaLista extends JFrame {
 
 	public VentanaLista(DesastreBio desastreBio){
 		super("Lista Personas Desaparecidas");
+		this.desastreBio = desastreBio;
 		initVentanaAgregar();
 		setSize (700,300);
 		setDefaultCloseOperation (EXIT_ON_CLOSE);
@@ -29,9 +31,11 @@ public class VentanaLista extends JFrame {
 			datos[0][i]=desastreBio.personasDesaparecidas.get(0).getNombre();
 			datos[1][i]= String.valueOf(desastreBio.personasDesaparecidas.get(1).getEdad());
 			datos[2][i]=desastreBio.personasDesaparecidas.get(2).getSexo();
-			datos[3][i]="Desaparecido";
+			datos[3][i]=desastreBio.personasDesaparecidas.get(3).getEstado();
 		}
+
 		JTable tabla = new JTable(datos,categorias);
+		add(new JScrollPane(tabla),BorderLayout.CENTER);
 		this.add(panel1);
 		añadirPanel(tabla);
 	}
