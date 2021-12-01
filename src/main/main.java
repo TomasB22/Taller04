@@ -4,6 +4,7 @@ import gui.VentanaLista;
 import model.DesastreBio;
 import model.Persona;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,9 +27,7 @@ public class main {
         System.out.println ("------------------------------------------");
     }
     public static void switchesMenu() {
-        DesastreBio d1 = new DesastreBio("Chile",2020,987451651,38346);
-        ArrayList<Persona> listPersonas = new ArrayList<>();
-
+        DesastreBio d1 = new DesastreBio("Chile",2020,987451651,38346,agregarPersonasDefault());
         int opcionSwitch = -1;
         do {
             opcionSwitch = validarMenu(5);
@@ -41,14 +40,24 @@ public class main {
                     mostrarMenu();
                 case 3 :
                     VentanaLista ventanaLista =  new VentanaLista(d1);
+                    ventanaLista.setVisible(true);
                 case 4 :
-
+                    d1.actualizarListaDesaparecidos();
                     mostrarMenu();
                 case 5 :
                     finalizarPrograma();
             }
         } while (opcionSwitch<5);
     }
+
+    private static ArrayList<Persona> agregarPersonasDefault() {
+        ArrayList<Persona> listPersonas = new ArrayList<>();
+        listPersonas.add(new Persona("Tomas Baeza",20,"desaparecido","Masculino"));
+        listPersonas.add(new Persona("Manlet Sanchez",21,"desaparecido","Femenino"));
+        listPersonas.add(new Persona("Gonzalo Caniupan",21,"desaparecido","Masculino"));
+        return listPersonas;
+    }
+
     private static void finalizarPrograma() {
         System.out.println ("Programa finalizado.");
     }
